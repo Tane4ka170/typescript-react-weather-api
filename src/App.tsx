@@ -45,7 +45,7 @@ const App = (): JSX.Element => {
           <ul className="absolute top-9 bg-white ml-1 rounded-b-md">
             {options.map((option: { name: string }, index: number) => (
               <li key={option.name + '-' + index}>
-                <button></button>
+                <button className="text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer"></button>
               </li>
             ))}
           </ul>
