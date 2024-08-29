@@ -1,7 +1,9 @@
 import { ChangeEvent, useState } from 'react'
+import { optionType } from './types'
 
 const App = (): JSX.Element => {
   const [term, setTerm] = useState<string>('')
+  const [city, setCity] = useState<optionType | null>(null)
   const [options, setOptions] = useState<[]>([])
 
   const getSearchOptions = (value: string) => {
@@ -21,6 +23,17 @@ const App = (): JSX.Element => {
     if (value === '') return
 
     getSearchOptions(value)
+  }
+
+  const onOptionSelect = (option: optionType) => {
+    setCity(option)
+    console.log(option.name)
+
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${option.lat}&lon=${option.lon}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => console.log({ data }))
   }
 
   return (
@@ -43,9 +56,14 @@ const App = (): JSX.Element => {
           />
 
           <ul className="absolute top-9 bg-white ml-1 rounded-b-md">
-            {options.map((option: { name: string }, index: number) => (
+            {options.map((option: optionType, index: number) => (
               <li key={option.name + '-' + index}>
-                <button className="text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer"></button>
+                <button
+                  className="text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer"
+                  onClick={() => onOptionSelect(option)}
+                >
+                  {option.name}
+                </button>
               </li>
             ))}
           </ul>
