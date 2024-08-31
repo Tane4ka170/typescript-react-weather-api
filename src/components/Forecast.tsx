@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Forecast() {
+const Forecast = (props) => {
   return <div>Forecast</div>
 }
 
