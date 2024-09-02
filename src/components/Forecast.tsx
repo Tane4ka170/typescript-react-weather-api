@@ -25,7 +25,7 @@ const Forecast = ({ data }: Props) => {
       <div className="mx-auto w-[300px]">
         <section className="text-center">
           <h2 className="text-2xl font-black">
-            {data.name} <span className="font-thin">{data.country}</span>
+            {data.name} <span className="font-thin">{data.counrty}</span>
           </h2>
           <h1 className="text-4xl font-extrabold">
             <Degree temp={Math.round(today.main.temp)} />
@@ -64,7 +64,7 @@ const Forecast = ({ data }: Props) => {
             <Sunrise /> <span className="mt-2">{getSunTime(data.sunrise)}</span>
           </div>
           <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
-            <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
+            <Sunset /> <span className="mt-2">{getSunTime(data.sinset)}</span>
           </div>
 
           <Tile
