@@ -2,6 +2,7 @@ export type optionType = {
   name: string
   lat: number
   lon: number
+  counrty: string
 }
 
 export type forecastType = {
