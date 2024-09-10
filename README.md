@@ -1,15 +1,32 @@
-This repository is using ReactJS, TypeScript and TailwindCSS. It also runs on node 18 (see .nvmrc) and has a formatter - prettier. If you're running this for the first time - please ensure you have nvm (node version manager).
+# WeatherQuest 🌍
 
-## How To Run
+**WeatherQuest** is a simple-to-use app for getting weather forecasts. Just enter a city name, select an option from the dropdown, and get detailed weather predictions!
 
-If you don't have nvm installed, run the following command:
-`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
-After you got nvm installed on your machine, run `nvm i` and then `nvm use` (to have the correct nodeJs version)
+## Features ✨
 
-Once you have the correct node version, run `npm i` to get all the required dependencies installed
+- Current weather forecast for the day and upcoming hours
+- Information on temperature, humidity, wind speed, and more
+- Clean and user-friendly interface
 
-After everything is installed, run `npm run start` and navigate to http://localhost:3000
+## Getting Started 🚀
 
-## API Calls
+1. Clone the repository
+2. Install dependencies with
 
-Please Note: The OpenWeather API is using an API Key. In the repository you fill find a `.env.example` file which you need to copy/save as `.env` and paste the value of your API key (which you can get when you register on the OpenWeather API website).
+```
+npm install
+```
+
+3. Run the project:
+
+```
+npm start
+
+```
+
+## Technologies ⚙️
+
+- **React** for building the UI
+- **TypeScript** for safe coding
+- **TailwindCSS** for styling
+- **OpenWeather API** for fetching weather data
